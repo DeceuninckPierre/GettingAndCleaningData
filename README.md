@@ -4,10 +4,10 @@ This repository contains the material requested for the peer graded assignment o
 
 ## Purpose
 
-The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis.  The outcome should be:
+The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis.  The outcome is:
 
 1. a tidy data set as described below 
-2. a Github repository with your script for performing the analysis (this repository)
+2. a Github repository with the script for performing the analysis (this repository)
 3. a code book that describes the variables, the data, and any transformations performed to clean up the data called CodeBook.md. 
 
 ## Assignment
