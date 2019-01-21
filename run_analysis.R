@@ -5,7 +5,7 @@ fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%2
 download.file(fileURL,"DataSet.zip",method = "curl")
 unzip("DataSet.zip")
 
-## Merges the training and the test sets to create one data set nemd merged.
+## Merges the training and the test sets to create one data set named merged.
 dir.create("UCI HAR Dataset/merged")
 dir.create("UCI HAR Dataset/merged/Inertial Signals")
 
@@ -31,17 +31,16 @@ X_mergedData_filtered <- X_mergedData[,featuresDataFilters]
 ## Using descriptive activity names to name the activities in the data set
 featuresDataRenamed <- featuresData[featuresDataFilters,2]
 featuresDataRenamed <- gsub("-","",featuresDataRenamed)
-featuresDataRenamed <- gsub("mean\\(\\)",".Mean.",featuresDataRenamed)
-featuresDataRenamed <- gsub("std\\(\\)",".Stdev.",featuresDataRenamed)
-featuresDataRenamed <- gsub("Acc",".Acceleration.RawSignal",featuresDataRenamed)
-featuresDataRenamed <- gsub("Acceleration.RawSignalJerk","Acceleration.JerkSignal",featuresDataRenamed)
-featuresDataRenamed <- gsub("Gyro",".AngularVelocity.RawSignal",featuresDataRenamed)
-featuresDataRenamed <- gsub("AngularVelocity.RawSignalJerk","AngularVelocity.JerkSignal",featuresDataRenamed)
+featuresDataRenamed <- gsub("mean\\(\\)","Mean",featuresDataRenamed)
+featuresDataRenamed <- gsub("std\\(\\)","Stdev",featuresDataRenamed)
+featuresDataRenamed <- gsub("Acc","AccelerationRawSignal",featuresDataRenamed)
+featuresDataRenamed <- gsub("AccelerationRawSignalJerk","AccelerationJerkSignal",featuresDataRenamed)
+featuresDataRenamed <- gsub("Gyro","AngularVelocityRawSignal",featuresDataRenamed)
+featuresDataRenamed <- gsub("AngularVelocityRawSignalJerk","AngularVelocityJerkSignal",featuresDataRenamed)
 featuresDataRenamed <- gsub("BodyBody","Body",featuresDataRenamed)
-featuresDataRenamed <- gsub("Mag",".Magnitude",featuresDataRenamed)
-featuresDataRenamed <- sub("^f","Freq.",featuresDataRenamed)
-featuresDataRenamed <- sub("^t","Time.",featuresDataRenamed)
-featuresDataRenamed <- sub("\\.$","",featuresDataRenamed)
+featuresDataRenamed <- gsub("Mag","Magnitude",featuresDataRenamed)
+featuresDataRenamed <- sub("^f","Freq",featuresDataRenamed)
+featuresDataRenamed <- sub("^t","Time",featuresDataRenamed)
 
 ##Appropriately labels the data set with descriptive variable names.
 colnames(X_mergedData_filtered) <- featuresDataRenamed
@@ -59,9 +58,13 @@ TidyData <- cbind(PersonId,Activity,X_mergedData_filtered)
 TidyData <- merge(TidyData,ActivityLabels,by.x = "ActivityId",by.y = "ActivityId")
 TidyData <- TidyData[c(2,69,3:68)]
 
+is.installed <- function(mypkg) is.element(mypkg, installed.packages()[,1]) 
+
+if(!is.installed("data.table")) install.packages("data.table")
 library(data.table)
 TidyData_table <- data.table(TidyData)
 
+if(!is.installed("dplyr")) install.packages("dplyr")
 library(dplyr)
 TidyData_table_avg <- TidyData_table[,lapply(.SD,mean),by="PersonId,Activity",.SDcols=3:68]
 TidyData_table_avg <- arrange(TidyData_table_avg,PersonId)
