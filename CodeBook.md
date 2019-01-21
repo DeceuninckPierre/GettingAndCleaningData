@@ -10,7 +10,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 ### Experimental study
 
->The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+>The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually.
 
 >The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
 
@@ -47,5 +47,25 @@ Name | Type | Description
 ------------ | ------------- | ------------- 
 PersonId | integer | Identification number of the volunteers
 Activity | text | Name of the Activity performed
-TimeBodyAccelerationRawSignalMeanX | numeric | Average value of the X dimension Accelaration raw signal measures means 
+TimeBodyAccelerationRawSignalMeanX | numeric | Average value of the X dimension body acceleration raw signal measures means 
+TimeBodyAccelerationRawSignalMeanY | numeric | Average value of the Y dimension body acceleration raw signal measures means 
+TimeBodyAccelerationRawSignalMeanZ | numeric | Average value of the Z dimension body acceleration raw signal measures means 
+TimeBodyAccelerationRawSignalStdevX | numeric | Average value of the X dimension body acceleration raw signal measures standard deviations
+TimeBodyAccelerationRawSignalStdevY | numeric | Average value of the Y dimension body acceleration raw signal measures standard deviations
+TimeBodyAccelerationRawSignalStdevZ | numeric | Average value of the Z dimension body acceleration raw signal measures standard deviations
+TimeGravityAccelerationRawSignalMeanX | numeric | Average value of the X dimension gravitational acceleration raw signal measures means
+TimeGravityAccelerationRawSignalMeanY | numeric | Average value of the Y dimension gravitational acceleration raw signal measures means
+TimeGravityAccelerationRawSignalMeanZ | numeric | Average value of the Z dimension gravitational acceleration raw signal measures means
+... | ... | ...
+TimeBodyAngularVelocityJerkSignalStdevX | numeric | Average value of the X dimension body angular velocity jerk signal measures standard deviations
+TimeBodyAngularVelocityJerkSignalStdevY | numeric | Average value of the Y dimension body angular velocity jerk signal measures standard deviations
+TimeBodyAngularVelocityJerkSignalStdevZ | numeric | Average value of the Z dimension body angular velocity jerk signal measures standard deviations
+... | ... | ...
+FreqBodyAccelerationRawSignalMeanX | numeric | Average value of the X dimension body acceleration raw signal measures means in the frequency domain
+FreqBodyAccelerationRawSignalMeanY | numeric | Average value of the Y dimension body acceleration raw signal measures means in the frequency domain
+FreqBodyAccelerationRawSignalMeanZ | numeric | Average value of the Z dimension body acceleration raw signal measures means in the frequency domain
+... | ... | ...
+FreqBodyAccelerationJerkSignalMagnitudeStdev  | numeric | Average value of the dimension body acceleration jerk signal measures magnitude standard deviations in the frequency domain
+... | ... | ...
 
+The full variable list can be derived based on the variable meaning
