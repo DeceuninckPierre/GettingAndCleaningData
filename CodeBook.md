@@ -20,5 +20,32 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 >Finally a Fast Fourier Transform (FFT) was applied to some of these signals (FREQ). 
 
-### Tidy Data extraction
+### Tidy Data compilation
+
+The Tidy Data was built, by extracting means and standard deviation of the above mentioned data.
+The extracted data were then averaged (mean calculation) for each of the 6 activities perfomed by the 30 volunteers
+
+## Description of the data
+
+The TidyDataSet.txt files contains 180 obesrvations (6 activities by 30 volunteer) of 68 variables summarising the results of the experimental studies.
+
+### Variable meaning
+
+Apart form the "PersonId" and "Activity" variables that describes respectively the volunteer number and the activity performed, all other variable describe the average outcome for the experiments by aggregation of the following patterns:
+
+* XYZ: direction of the measured signal 
+* Body/Gravity: acceleration component of the measured signal
+* Acceleration/AngularVelocity: sensor used for the measured signal (accelerometer or gyroscope)
+* RawSignal/JerkSignal: nature of the mesaure (raw or derived)
+* Magnitude: magnitude of the 3 dimensional signal
+* Time/Freq: representation of the measure in time or frequency domain
+* Mean/Stdev: mean value and standard deviation of the measurments
+
+### Variable list
+
+Name | Type | Description
+------------ | ------------- | ------------- 
+PersonId | integer | Identification number of the volunteers
+Activity | text | Name of the Activity performed
+TimeBodyAccelerationRawSignalMeanX | numeric | Average value of the X dimension Accelaration raw signal measures means 
 
