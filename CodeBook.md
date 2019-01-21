@@ -68,4 +68,4 @@ FreqBodyAccelerationRawSignalMeanZ | numeric | Average value of the Z dimension 
 FreqBodyAccelerationJerkSignalMagnitudeStdev  | numeric | Average value of the dimension body acceleration jerk signal measures magnitude standard deviations in the frequency domain
 ... | ... | ...
 
-The full variable list can be derived based on the variable meaning
+*The full variable list can be derived based on the variable meaning*
